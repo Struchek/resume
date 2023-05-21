@@ -14,16 +14,15 @@
                     {{name}}
 
                     {{#if point includeZero=true}} ({{point}}) {{/if}}
-                    <<<<<<< HEAD {{#if isTop}} (123123123) {{/if}}======={{#if isTop}} (top!) {{/if}}>>>>>>>
-                        987d47edbb2c6366f91a666aaf667cd0e4569504
+                    {{#if isTop}} (top!) {{/if}}
+                       
+                    {{#unless point includeZero=true}} (не вивчаємо) {{/unless}}
 
-                        {{#unless point includeZero=true}} (не вивчаємо) {{/unless}}
-
-                        {{#unless point}}
-                        {{#if point includeZero=true}}
-                        (зараз вивчаємо)
-                        {{/if}}
-                        {{/unless}}
+                    {{#unless point}}
+                    {{#if point includeZero=true}}
+                    (зараз вивчаємо)
+                    {{/if}}
+                    {{/unless}}
                 </li>
                 {{/each}}
             </ul>
