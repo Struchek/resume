@@ -1,0 +1,103 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <h1>Program</h1>
+    <hr>
+    <h2>Excursion</h2>
+    {{#with program/excursion}}
+    <p><b>Name: </b>{{name}}</p>
+    {{#with location}}
+    <p><b>Location: </b>{{city}} ({{country}})</p>
+    {{/with}}
+    <p><b>Date: </b>
+        <datetime>{{date}}</datetime>
+    </p>
+    <h3>Program:</h3>
+    <ul>
+        {{#each program}}
+        <li>
+            <p><b>Name: </b>{{name}}</p>
+            <p><b>Type: </b>{{type}}</p>
+            <p><b>Duration: </b>{{duration}}</p>
+            <h3>Details:</h3>
+            {{#with details}}
+            <ul>
+                {{#if museum}}
+                <li>
+                    <h3>Museum:</h3>
+                    {{#with museum}}
+                    <p><b>Name: </b>{{name}}</p>
+                    {{#with location}}
+                    <p><b>Location: </b>
+                    <address>{{address}} ({{city}}, {{country}})</address>
+                    </p>
+                    {{/with}}
+                    <h3>Exhibits:</h3>
+                    <ul>
+                        {{#each exhibits}}
+                        <li>
+                            <p><b>Name: </b>{{name}}</p>
+                            <p><b>Artist: </b>
+                                {{#if artist}}
+                                {{artist}}
+                                {{else}}
+                                Unknow artist
+                                {{/if}}
+                            </p>
+                            <p><b>Description: </b>{{description}}</p>
+                            <p><b>Audio guide: </b>{{#if audio_guide}} optional {{/if}}</p>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    {{/with}}
+                </li>
+                {{/if}}
+                {{#if venue}}
+                <li>
+                    <h3>Venue:</h3>
+                    {{#with venue}}
+                    <p><b>Name: </b>{{name}}</p>
+                    {{#with location}}
+                    <p><b>Location: </b>
+                    <address>{{address}} ({{city}}, {{country}})</address>
+                    </p>
+                    {{/with}}
+                    {{/with}}
+                    <h3>Performers</h3>
+                    <ul>
+                        {{#each performers}}
+                        <li>
+                            <p><b>Name: </b>{{name}}</p>
+                            <p><b>Type: </b>{{type}}</p>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </li>
+                {{/if}}
+                <li>
+                    {{> title data='Guide:'}}
+                    <ul>
+                        {{#with guide}}
+                        <li>
+                            <p><b>Name: </b>{{name}}</p>
+                            <p><b>Language: </b>{{language}}</p>
+                            <p><b>Rating: </b>{{rating}}</p>
+                        </li>
+                        {{/with}}
+                    </ul>
+                </li>
+            </ul>
+            {{/with}}
+        </li>
+        {{/each}}
+    </ul>
+    {{/with}}
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
