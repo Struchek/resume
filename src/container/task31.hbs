@@ -3,98 +3,113 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<main>
-    <div class="row gy-4">
-        <section class="col-9">
-            {{#with navigation}}
-            {{#each links}}
-            <a href="{{href}}" class="btn btn-link col-3">{{text}}</a>
-            {{/each}}
-            <button class="btn btn-primary ">{{button.text}}</button>
-            {{/with}}
-        </section>
-        <hr>
-        <section>
-            {{#with header}}
-            <h1>{{title}}</h1>
-            <p>{{description}}</p>
-            <a href="{{button.href}}" class="btn btn-primary ">{{button.text}}</a>
-            {{/with}}
-        </section>
-        <hr class="row gx-2">
-        <section class="row ">
-            {{#with city}}
-            <h2>{{title}}</h2>
-            <section class=" col-12">
-                <div class="row gx-2">
-                    {{#each cards}}
-                    <div class="card col-6">
-                        <img class="card-img-top" src="{{picture.src}}" alt="{{picture.alt}}">
-                        <div class="card-body">
-                            <h5 class="card-title ">{{title}}</h5>
-                            <p>{{description}}</p>
-                            <a href="{{button.href}}" class="btn btn-primary">{{button.text}}</a>
-                        </div>
-                    </div>
-                    {{/each}}
-                </div>
-            </section>
-            {{/with}}
-        </section>
-        <hr class="row gy-4">
-        <section class="col-9">
-            {{#with winner}}
-            <h2>{{title}}</h2>
-            {{#with table}}
-            <table class="table">
-                <thead>
-                    <tr>
-                        {{#each head}}
-                        <th>{{this}}</th>
-                        {{/each}}
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each user}}
-                    <tr>
-                        <td>{{place}}</td>
-                        <td>{{name}}</td>
-                        <td>{{surname}}</td>
-                        <td>@{{nickname}}</td>
-                    </tr>
-                    {{/each}}
-                </tbody>
-            </table>
-            {{/with}}
-            {{/with}}
-        </section>
-        <hr class="row gy-4">
+<header>
+    {{#with navigation}}
+    <nav>
+        {{#each links}}
+        <a href="{{href}}" class="btn btn-link ">{{text}}</a>
+        {{/each}}
+        <button class="btn btn-primary ">{{button.text}}</button>
+    </nav>
+    {{/with}}
 
-        <section class="col-12">
-            {{#with relaxion}}
-            <div class="display-3">{{title}}</div>
+    <hr>
+
+    {{#with header}}
+    <h1>{{title}}</h1>
+    <p>{{description}}</p>
+    <a href="{{button.href}}" class="btn btn-primary ">{{button.text}}</a>
+    {{/with}}
+    <br>
+    <br>
+    <hr>
+</header>
+
+<main>
+    <div class="row g-4">
+        <section>
+            {{#with city}}
             <br>
-            <div class="row g-1">
+            <h2>{{title}}</h2>
+            <br>
+            <div class="row gx-2">
                 {{#each cards}}
-                <section class="col-5 ">
-                    <div class="card text-bg-secondary ">
-                        <div class="card-header ">{{header}}</div>
-                        <div class="card-bodyr">
-                            <h6 class="card-title">{{title}}</h6>
-                            <p>{{description}}</p>
-                        </div>
+                <div class="card col-6">
+                    <img class="card-img-top" src="{{picture.src}}" alt="{{picture.alt}}">
+                    <div class="card-body">
+                        <h5 class="card-title ">{{title}}</h5>
+                        <p>{{description}}</p>
+                        <a href="{{button.href}}" class="btn btn-primary">{{button.text}}</a>
                     </div>
-                </section>
+                </div>
                 {{/each}}
             </div>
             {{/with}}
+            <br>
+        </section>
+
+        <hr>
+
+        <section>
+            <div class="col-9">
+                {{#with winner}}
+                <h2>{{title}}</h2>
+                <br>
+                {{#with table}}
+                <table class="table">
+                    <thead>
+                        <tr>
+                            {{#each head}}
+                            <th>{{this}}</th>
+                            {{/each}}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each user}}
+                        <tr>
+                            <td>{{place}}</td>
+                            <td>{{name}}</td>
+                            <td>{{surname}}</td>
+                            <td>@{{nickname}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+                {{/with}}
+                {{/with}}
+            </div>
+            <br>
+        </section>
+        <hr class="row gy-4">
+
+        <section>
+            <div class="col-12">
+                {{#with relaxion}}
+                <p class="display-3">{{title}}</p>
+                <br>
+                <div class="row g-1">
+                    {{#each cards}}
+                    <section class="col-5 ">
+                        <div class="card text-bg-secondary ">
+                            <div class="card-header ">{{header}}</div>
+                            <div class="card-bodyr">
+                                <h6 class="card-title">{{title}}</h6>
+                                <p>{{description}}</p>
+                            </div>
+                        </div>
+                    </section>
+                    {{/each}}
+                </div>
+                {{/with}}
+            </div>
+            <br>
         </section>
         <hr>
 
-        <div class="col-12">
-            <div class="row g-1">
+        <section>
+            <div class="row g">
                 {{#each rest.cards}}
-                <section class="col-6">
+                <div class="col-6">
                     <div class="card ">
                         <div class="card-header text-center text-bg-light">{{header}}</div>
                         <div class="card-body text-center">
@@ -104,10 +119,12 @@
                         </div>
                         <div class="card-footer text-center text-bg-light">{{footer}}</div>
                     </div>
-                </section>
+                </div>
                 {{/each}}
             </div>
-        </div>
+            <br>
+        </section>
+
         <hr>
 
         <section>
@@ -129,8 +146,39 @@
             </div>
             {{/with}}
         </section>
+        <br>
+        <hr>
     </div>
 </main>
+
+<footer>
+    {{#with footer}}
+    <h5>{{title}}</h5>
+    <section class="col-9 row gx-4">
+        <div class="col-4 row">
+            <div class="row g-2">
+                {{#each navigation}}
+                <a href="{{href}}" class="btn btn-link">{{text}}</a>
+                {{/each}}
+            </div>
+        </div>
+        <div class="col-4 row">
+            <div class="row g-2">
+                {{#each socialMedia}}
+                <a href="{{link}}" class="btn btn-outline-dark ">{{name}}</a>
+                {{/each}}
+            </div>
+        </div>
+        <div class="col-4 row">
+            <div class="row g-2 ">
+                {{#each partners}}
+                <a href="{{link}}" class="btn btn-outline-info ">{{name}}</a>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+    {{/with}}
+</footer>
 
 {{!--
 Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
