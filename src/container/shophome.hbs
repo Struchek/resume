@@ -1,0 +1,168 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<header class="mb-5">
+    {{#with navigation}}
+    <nav>
+        <div class="card">
+            <div class="row">
+                <div class="col-12">
+                    <div class="nav nav-tabs">
+                        {{#each links}}
+                        <div class="nav-item ">
+                            <a href="{{href}}" class="nav-link">{{text}}</a>
+                        </div>
+                        {{/each}}
+                        <a href="{{href}}" class="nav-link disabled">Disabled</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    {{/with}}
+</header>
+<main>
+    <section class="mb-5">
+        <div class="col-12">
+            {{#with newsBlock}}
+            <h1 class="text-center mb-4">{{title}}</h1>
+
+            <div class="row g-1">
+                {{#each cards}}
+
+                <div class="col-3 mb-2">
+                    <div class="card text-bg-dark">
+                        <div class="card-header">
+                            <h3>{{title}}
+                                {{#if isTop}}
+                                <span class="badge text-bg-danger rounded-pill">Топ</span>
+                                {{/if}}
+                                {{#if isNew}}
+                                <span class="badge text-bg-success rounded-pill">Нова</span>
+                                {{/if}}
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <p>{{description}}</p>
+                        </div>
+                    </div>
+                </div>
+
+                {{/each}}
+            </div>
+            {{/with}}
+        </div>
+    </section>
+
+    <hr>
+
+    <section class="my-5">
+        {{#with goodsBlock}}
+        <div class="card">
+            <div class="card-header mb-3">
+                <ul class="nav nav-tabs card-header-tabs">
+                    {{#each tabs}}
+                    <li class="nav-item">
+                        <a class="nav-link {{#if isActive}}active{{else if isDisabled}}disabled{{/if}}"
+                            href="#">{{text}}</a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="col-12">
+                    <div class="row gx-2 gy-4">
+                        {{#each cards}}
+                        <div class="col-4">
+                            <div class="card">
+                                <img class="card-img-top" src="{{image}}" alt="Product photo">
+                                <div class="card body">
+                                    <h4 class="card title">{{title}}
+                                        {{#if isHot}}
+                                        <span class="badge rounded-pill text-bg-warning">HOT!</span>
+                                        {{/if}}
+                                        {{#if isNew}}
+                                        <span class="badge text-bg-primary rounded-pill">Нове</span>
+                                        {{/if}}
+                                    </h4>
+                                    <p>{{description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </section>
+
+    <hr>
+
+    <section class="my-5">
+        {{#with subscribe}}
+        <div class="col-12">
+            <div class="card text-bg-dark">
+                <div class="card-body">
+                    <h2 class="mb-4">{{header}}</h2>
+                    <p>{{description}}</p>
+                    <div class="row gy-2">
+                        {{#each buttons}}
+                        <div>
+                            <a class="btn bg-primary" href="{{link}}">{{text}}</a>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </section>
+
+    <hr>
+
+    <section class="my-5">
+        {{#with service}}
+        <div class="col-12">
+            <div class="card text-bg-success">
+                <div class="card-body text-center">
+                    <h2>{{title}}</h2>
+                    <p>{{description}}</p>
+                    {{#each buttons}}
+                    <a class="btn bg-primary" href="{{link}}">{{text}}</a>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </section>
+
+    <hr>
+</main>
+<footer>
+
+    <section>
+        <nav>
+            <div class="col-10">
+                <div class="row gx-3">
+                    {{#each footer}}
+                    <div class="col-2">
+                        <div class="row gy-2">
+                            {{#each this}}
+                            <a href="{{link}}" class="btn btn-link {{#if @last}}disabled{{/if}}">{{text}}</a>
+                            {{/each}}
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </nav>
+    </section>
+
+</footer>
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
