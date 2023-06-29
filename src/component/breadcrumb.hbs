@@ -1,0 +1,13 @@
+<ul class="nav nav-tabs">
+    {{#each tabs}}
+    {{#if @last}}
+    <li class="nav-item">
+        <a class="nav-link active" href="#">{{text}}</a>
+    </li>
+    {{else}}
+    <li class="nav-item">
+        <a class="nav-link" href="#">{{text}}</a>
+    </li>
+    {{/if}}
+    {{/each}}
+</ul>
