@@ -1,0 +1,79 @@
+<div class="card mt-5">
+    <div class="card-body">
+
+
+        <div class="card">
+            <div class="card-header">
+                {{#with title}}
+                <h5>{{userName}}</h5>
+                <p class="mb-3">{{caption}}</p>
+                <date>{{date}}</date>
+                {{/with}}
+            </div>
+
+
+            {{#with reviewBody}}
+            <div class="card-body">
+                <p>
+                    {{#with seller}}
+                    {{title}}: {{value}}
+                    {{/with}}
+                </p>
+
+                <p>
+                    {{#with rating}}
+                    {{title}}: {{value}}
+                    {{/with}}
+                </p>
+
+                {{#each text}}
+                {{#if @first}}
+                <p>{{this}}</p>
+                {{else}}
+                <p>{{this}}</p>
+                {{/if}}
+                {{/each}}
+
+                <div class="py-2">
+                    {{#with advantages}}
+                    <h6 class="mb-1">{{title}}:</h6>
+
+                    <p>{{text}}</p>
+                    {{/with}}
+                </div>
+
+                <div class="pb-1">
+                    {{#with disadvantages}}
+                    <h6 class="mb-1">{{title}}:</h6>
+
+                    <p>{{text}}</p>
+                    {{/with}}
+                </div>
+
+                <div>
+                    {{#each images}}
+                    <img src="{{this}}">
+                    {{/each}}
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ps-5">
+            {{#each coments}}
+            <div class="card my-4">
+                <div class="card-body">
+                    <h5 class="card-title">{{userName}}</h5>
+                    <date>{{date}}</date>
+                    <p class="mt-2 mb-1">{{text}}</p>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+        {{/with}}
+
+
+    </div>
+</div>

@@ -1,0 +1,139 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<header class="mb-5">
+    {{> header}}
+</header>
+
+<main>
+
+    <div class="row">
+
+        {{#with formBlock}}
+        <div class="col-8">
+
+            <h1>{{header}}</h1>
+
+            <p class="my-3">
+                {{#with rating}}
+                {{title}}: {{value}}
+                {{/with}}
+            </p>
+
+            <div>
+                {{#with actionBlock}}
+
+                {{> breadcrumb}}
+
+                <hr class="my-5">
+
+                <div class="card">
+                    {{#with report}}
+                    <div class="card-body">
+                        <h5 class="card-title">{{title}}</h5>
+
+                        {{#with button}}
+                        <a class="btn btn-secondary" href="{{link}}">{{text}}</a>
+                        {{/with}}
+                    </div>
+                    {{/with}}
+                </div>
+                {{/with}}
+            </div>
+
+            <hr class="my-5">
+
+            <div>
+                {{#with feedbackBlock}}
+
+                <h2 class="my-5">{{title}}</h2>
+
+                {{#each buttons}}
+
+                {{#if isWarning}}
+                <a class="btn btn-warning" href="{{link}}">{{text}}</a>
+                {{/if}}
+                {{#if isSuccess}}
+                <a class="btn btn-success" href="{{link}}">{{text}}</a>
+                {{/if}}
+                {{#if isDanger}}
+                <a class="btn btn-danger" href="{{link}}">{{text}}</a>
+                {{/if}}
+
+                {{/each}}
+
+                {{/with}}
+            </div>
+
+        </div>
+
+        <div class="col-4">
+            {{#with goodsInfo}}
+
+            <div class="card">
+                <div class="card-body">
+                    <img class="card-img-top mb-3" src="{{photo}}">
+                    <h5 class="my-auto">{{name}}</h5>
+                </div>
+            </div>
+
+            <div class="card my-3">
+                <div class="card-body">
+
+                    <h5 class="card-title">{{price}}</h5>
+
+                    {{#if inMarket}}
+                    <p>Є в наявності</p>
+                    {{/if}}
+
+                    {{#each buttons}}
+                    <div class="mb-2">
+                        {{#if isPrimary}}
+                        <a class="btn btn-primary" href="{{link}}">{{text}}</a>
+                        {{/if}}
+                    </div>
+                    <div>
+                        {{#if isSecondary}}
+                        <a class="btn btn-secondary" href="{{link}}">{{text}}</a>
+                        {{/if}}
+                    </div>
+                    {{/each}}
+
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    {{#with seller}}
+                    <span>{{title}}: <b>{{value}}</b></span>
+                    {{/with}}
+                </div>
+            </div>
+            {{/with}}
+        </div>
+
+        {{/with}}
+    </div>
+
+    <hr class="my-5">
+
+    {{#each reviewList}}
+    {{> reviewItem}}
+    {{/each}}
+
+    {{#with service}}
+    {{> cardGreen}}
+    {{/with}}
+
+    <hr>
+</main>
+
+<footer>
+    {{> footerBootstrap}}
+</footer>
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
