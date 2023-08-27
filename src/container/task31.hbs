@@ -20,19 +20,18 @@
     <p>{{description}}</p>
     <a href="{{button.href}}" class="btn btn-primary ">{{button.text}}</a>
     {{/with}}
-    <br>
-    <br>
-    <hr>
+
+    <hr class="mt-5">
 </header>
 
 <main>
     <div class="row g-4">
         <section>
             {{#with city}}
-            <br>
-            <h2>{{title}}</h2>
-            <br>
-            <div class="row gx-2">
+
+            <h2 class="mt-2 mb-4">{{title}}</h2>
+
+            <div class="row gx-2 mb-3">
                 {{#each cards}}
                 <div class="card col-6">
                     <img class="card-img-top" src="{{picture.src}}" alt="{{picture.alt}}">
@@ -45,16 +44,16 @@
                 {{/each}}
             </div>
             {{/with}}
-            <br>
+
         </section>
 
         <hr>
 
         <section>
-            <div class="col-9">
+            <div class="col-9 mb-4">
                 {{#with winner}}
-                <h2>{{title}}</h2>
-                <br>
+                <h2 class="mb-4">{{title}}</h2>
+
                 {{#with table}}
                 <table class="table">
                     <thead>
@@ -78,15 +77,16 @@
                 {{/with}}
                 {{/with}}
             </div>
-            <br>
+
         </section>
-        <hr class="row gy-4">
+
+        <hr class="row my-4">
 
         <section>
-            <div class="col-12">
+            <div class="col-12 mb-4">
                 {{#with relaxion}}
                 <p class="display-3">{{title}}</p>
-                <br>
+
                 <div class="row g-1">
                     {{#each cards}}
                     <section class="col-5 ">
@@ -102,12 +102,13 @@
                 </div>
                 {{/with}}
             </div>
-            <br>
+
         </section>
+
         <hr>
 
         <section>
-            <div class="row g">
+            <div class="row g mb-3">
                 {{#each rest.cards}}
                 <div class="col-6">
                     <div class="card ">
@@ -122,15 +123,15 @@
                 </div>
                 {{/each}}
             </div>
-            <br>
+
         </section>
 
         <hr>
 
-        <section>
+        <section class="mb-3">
             {{#with proposition}}
-            <div class="display-2">{{title}}</div>
-            <br>
+            <div class="display-2 mb-5">{{title}}</div>
+
             <div class="row ">
                 {{#each card}}
                 <div class="col-5">
@@ -146,7 +147,7 @@
             </div>
             {{/with}}
         </section>
-        <br>
+
         <hr>
     </div>
 </main>
