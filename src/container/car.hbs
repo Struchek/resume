@@ -6,25 +6,25 @@
 <div>
     <main>
         <section>
-            <h1>{{make}} {{model}}<span class="badge bg-secondary"></span></h1>
-            <br>
+            <h1 class="mb-4">{{make}} {{model}}<span class="badge bg-secondary"></span></h1>
+
             <p><b>Year: </b>{{year}}</p>
             <p><b>Color: </b>{{color}}</p>
             <hr>
-            <h2>Features:<span class="badge bg-secondary"></span></h2>
-            <br>
+            <h2 class="mb-4">Features:<span class="badge bg-secondary"></span></h2>
+
             {{#with features}}
             <ul>
                 <li>
                     {{#if interior}}
-                    <h3>Interior:<span class="badge bg-secondary"></span></h3>
-                    <br>
+                    <h3 class="mb-4">Interior:<span class="badge bg-secondary"></span></h3>
+
                     {{#with interior}}
                     <ul>
                         <li>
                             {{#with seats}}
-                            <h4>Seats:<span class="badge bg-secondary"></span></h4>
-                            <br>
+                            <h4 class="mb-4">Seats:<span class="badge bg-secondary"></span></h4>
+
                             <ul>
                                 <li>
                                     <p><b>Material: </b>{{material}}</p>
@@ -41,11 +41,11 @@
                             </ul>
                             {{/with}}
                         </li>
-                        <br>
-                        <li>
+
+                        <li class="py-4 ">
                             {{#with dashboard}}
-                            <h4>Dashboard:<span class="badge bg-secondary"></span></h4>
-                            <br>
+                            <h4 class="mb-4">Dashboard:<span class="badge bg-secondary"></span></h4>
+
                             <p><b>Material: </b>{{material}}</p>
                             <p><b>Color: </b>{{color}}</p>
                             <p><b>Display: </b></p>
@@ -69,8 +69,8 @@
                         </li>
                         <li>
                             {{#with audio}}
-                            <h4>Audio:<span class="badge bg-secondary"></span></h4>
-                            <br>
+                            <h4 class="mb-4">Audio:<span class="badge bg-secondary"></span></h4>
+
                             <ul>
                                 <li>
                                     <p><b>System: </b>{{system}}</p>
@@ -97,13 +97,13 @@
                 <hr>
                 <li>
                     {{#if exterior}}
-                    <h3>Exterior:<span class="badge bg-secondary"></span></h3>
-                    <br>
+                    <h3 class="mb-4">Exterior:<span class="badge bg-secondary"></span></h3>
+
                     {{#with exterior}}
                     <ul>
                         <li>
-                            <h4>Wheels:<span class="badge bg-secondary"></span></h4>
-                            <br>
+                            <h4 class="mb-4">Wheels:<span class="badge bg-secondary"></span></h4>
+
                             <ul>
                                 {{#with wheels}}
                                 <li>
@@ -118,10 +118,10 @@
                                 {{/with}}
                             </ul>
                         </li>
-                        <br>
-                        <li>
-                            <h4>Headlights:<span class="badge bg-secondary"></span></h4>
-                            <br>
+
+                        <li class="py-4">
+                            <h4 class="mb-4">Headlights:<span class="badge bg-secondary"></span></h4>
+
                             <ul>
                                 {{#with headlights}}
                                 <li>
@@ -136,10 +136,10 @@
                                 {{/with}}
                             </ul>
                         </li>
-                        <br>
+
                         <li>
-                            <h4>Sunroof:<span class="badge bg-secondary"></span></h4>
-                            <br>
+                            <h4 class="mb-4">Sunroof:<span class="badge bg-secondary"></span></h4>
+
                             <ul>
                                 {{#with sunroof}}
                                 <li>
@@ -161,13 +161,13 @@
                 <hr>
                 <li>
                     {{#if safety}}
-                    <h3>Safety:<span class="badge bg-secondary"></span></h3>
-                    <br>
+                    <h3 class="mb-4">Safety:<span class="badge bg-secondary"></span></h3>
+
                     {{#with safety}}
                     <ul>
-                        <li>
-                            <h4>Airbags:<span class="badge bg-secondary"></span></h4>
-                            <br>
+                        <li class="pb-4">
+                            <h4 class="mb-4">Airbags:<span class="badge bg-secondary"></span></h4>
+
                             <ul>
                                 {{#with airbags}}
                                 <li>
@@ -185,10 +185,10 @@
                                 {{/with}}
                             </ul>
                         </li>
-                        <br>
+
                         <li>
-                            <h4>Assistance:<span class="badge bg-secondary"></span></h4>
-                            <br>
+                            <h4 class="mb-4">Assistance:<span class="badge bg-secondary"></span></h4>
+
                             <ul>
                                 {{#with assistance}}
                                 <li>
@@ -222,9 +222,9 @@
                 </li>
             </ul>
             {{/with}}
-            <br>
-            <h2>Engine:<span class="badge bg-secondary"></span></h2>
-            <br>
+
+            <h2 class="my-4">Engine:<span class="badge bg-secondary"></span></h2>
+
             <ul>
                 {{#with engine}}
                 <li>
@@ -244,9 +244,9 @@
                 </li>
                 {{/with}}
             </ul>
-            <br>
-            <h2>Fuel economy:<span class="badge bg-secondary"></span></h2>
-            <br>
+
+            <h2 class="my-4">Fuel economy:<span class="badge bg-secondary"></span></h2>
+
             <ul>
                 {{#with fuel_economy}}
                 <li>
@@ -260,10 +260,9 @@
                 </li>
                 {{/with}}
             </ul>
-            <br>
             <hr>
-            <h2>Price:<span class="badge bg-secondary"></span></h2>
-            <br>
+            <h2 class="my-4">Price:<span class="badge bg-secondary"></span></h2>
+
             {{#with price}}
             <p><b>Base: </b>{{base}}</p>
             <p><b>Destination: </b>{{destination}}</p>

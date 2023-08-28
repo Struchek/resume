@@ -3,13 +3,13 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
+<main>
     <h1>Web</h1>
     <hr>
     <h2>Languages:</h2>
     {{#each web.languages}}
     <ul>
-        <li>
+        <li class="my-4">
             <p><b>Name: </b>{{name}}</p>
             <p><b>Version: </b>{{version}}</p>
             <p><b>Description: </b>{{description}}</p>
@@ -71,10 +71,10 @@
             {{/each}}
             {{/if}}
         </li>
-        <hr>
+        <hr class="my-4">
     </ul>
     {{/each}}
-</div>
+</main>
 
 {{!--
 Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
